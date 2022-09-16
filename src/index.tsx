@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { MantineProvider } from '@mantine/core';
+import { NavbarNested } from './component/atom/navbar-b';
+import AppShellDemo from './component/atom/appshell';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <MantineProvider withGlobalStyles withNormalizeCSS>
     <App />
-  </React.StrictMode>
+    {/* <NavbarNested open={false} /> */}
+    <AppShellDemo />
+  </MantineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
